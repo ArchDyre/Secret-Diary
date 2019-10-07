@@ -48,7 +48,7 @@ registration_System();
     <!-- Declare <meta> variables -->
     
         <!-- Declare description of website -->
-        <meta name="description" content="">
+        <meta name="description" content="login / registration Page">
         <!-- Declare author of website. -->
         <meta name="author" content="Rohan Dyre">
         <!-- Declare keywords relating to SEO of website content -->
