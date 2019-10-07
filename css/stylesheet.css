@@ -1,0 +1,301 @@
+body {
+    background-color: transparent!important;
+    background: url("http://localhost/my_Projects/secret_Diary/images/misty_Background_Shadowed.png") no-repeat center center;
+    background-color: transparent!important;
+    background-size: cover;
+    overflow: auto;
+    margin-top: 90px !important;
+    margin-bottom: 90px !important;
+    min-height: calc(100vh - 180px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 575.98px) {
+ 
+    body{
+        
+        margin-bottom: 140px !important;
+        
+    }
+    
+}
+
+
+/* Hides **** */
+.hide_Me{
+    
+    display: none !important;
+    
+}
+
+
+/* Disables pointer events */
+.disabled{
+  pointer-events: none;
+}
+
+
+
+/*
+
+Login & Registration
+
+*/
+
+@media screen and (max-width: 1199.98px) { /* screen size until 1199.98px */
+    /* login/register page Main Header */
+    .f_Main_Header {
+        font-size: 2.5em; /* 2.5x default size */
+        }
+    /* Diary page Main header*/
+    .d_Main_Header {
+        font-size: 2.5em; /* 2.5x default size */
+        }
+    /* login/register page Sub Header */
+    .f_Sub_Header {
+        font-size: 1.5em; /* 1.5x default size */
+        }
+    /* Diary sub page headers*/
+    .d_Sub_Header {
+        font-size: 1.2em; /* 1.2x default size */
+        }
+    .not_Member_Title {
+        font-size: 1em; /* 1.0x default size */
+        }
+    .login_Buttons{
+        font-size: 1em; /* 1.0x default size */
+        }
+    
+    
+    /* login/register font-sizes */
+    input[type="email"], input[type="password"]{
+        
+        font-size: 1.2em;  
+        
+    }
+    
+   
+}
+
+@media screen and (max-width: 991.98px) { /* screen size until 1000px */
+    /* login/register page Main Header */
+    .f_Main_Header {
+        font-size: 2em; /* 2.0x default size */
+        }
+    /* Diary page Main header*/
+    .d_Main_Header {
+        font-size: 2em; /* 2.0x default size */
+        }
+    /* login/register page Sub Header */
+    .f_Sub_Header {
+        font-size: 1.2em; /* 1.2x default size */
+        }
+    /* Diary sub page headers*/
+    .d_Sub_Header {
+        font-size: 1.0em; /* 1.0x default size */
+        margin: 0px !important;
+        }
+    /* Footer titles */
+    .ft_titles{
+        
+        font-size: 0.8em;
+        
+    }
+    .not_Member_Title {
+        font-size: 0.8em; /* 0.8x default size */
+        }
+    .login_Buttons{
+        font-size: 0.9em; /* 0.9x default size */
+        
+        }
+    
+    /* login/register font-sizes */
+    input[type="email"], input[type="password"]{
+        
+        font-size: 0.8em;
+        
+    }
+    
+    
+}
+
+@media screen and (max-width: 575.98px) { /* screen size until 575.98px */
+    /* login/register page Main Header */
+    .f_Main_Header {
+        font-size: 1.5em; /* 1.5x default size */
+        }
+    /* Diary page Main header*/
+    .d_Main_Header {
+        font-size: 1.5em; /* 1.5x default size */
+        }
+    /* login/register page Sub Header */
+    .f_Sub_Header {
+        font-size: 0.8em; /* 0.8x default size */
+        }
+    /* Diary page sub headers*/
+    .d_Sub_Header {
+        font-size: 0.8em; /* 0.6x default size */
+        }
+    /* Footer titles */
+    .ft_titles{
+        
+        font-size: 0.6em;
+                
+    }
+    .not_Member_Title {
+        font-size: 0.6em; /* 0.6x default size */
+        }
+    .login_Buttons{
+        font-size: 0.6em !important; /* 0.8x default size */
+        width: calc(100% - 20%);
+        
+        }
+    
+    /* login/register font-sizes */
+    input[type="email"], input[type="password"]{
+        
+        font-size: 0.7em;
+        
+    }
+    
+
+}
+
+/* `Log out` button color on hover: */
+
+.logout_Button_Styler:hover{
+    
+    color: red !important;
+    font-weight: 700 !important;
+}
+
+/* Default `nav link` color is black */
+.nav_My_Color:link{
+    
+    color: black !important;
+    
+}
+
+/* Default `nav link` hover color is black and bold */
+.nav_My_Color:hover{
+    
+    color: black !important;
+    font-weight: 700 !important;
+
+}
+
+/* `Navbar` vertical line between `nav items` */
+.vertical_Line{
+    
+    border-left: 2px solid black;
+    height: auto;
+    
+}
+
+/*  */
+.custom_Links:hover{
+    
+    font-weight: 700;
+    
+}
+
+/* custom borders */
+
+.my_Border{
+    
+    border: solid;
+    border-width: thick !important;
+    
+}
+
+/* Label styling == white */
+
+.label_White_Styler{
+    
+    color: white;
+    
+}
+
+/*
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+                              TOPIC:
+            ---------------------------------------------
+
+
+                          *Footer CSS*
+        
+        
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+*/
+
+
+/* #main_Desktop_Footer max width */
+
+body footer, #main_Desktop_Footer{
+    
+    min-height: 40px;
+    max-height: 120px;
+    
+}
+
+
+/*
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+                              TOPIC:
+            ---------------------------------------------
+
+
+                          *New Entry Page*
+        
+        
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+*/
+
+
+/* border colors == black */
+
+#diary_New_Entry input[type="date"], 
+#diary_New_Entry input[type="text"], 
+#diary_New_Entry textarea{
+    
+    border-color: black;
+    
+}
+
+#diary_New_Entry input[type="date"], 
+#diary_New_Entry input[type="text"], 
+#diary_New_Entry textarea{
+    
+    color: black;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
