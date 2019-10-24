@@ -34,8 +34,6 @@ function login_System(){
     global $error_Success_Alert;
     global $login_Email;
     global $login_Password;
-    global $query;
-    global $row;
     global $link;
     
     
@@ -62,11 +60,11 @@ function login_System(){
                  </div>";
 
         }else{
-
+            
             // Assign `user inputs` to variables.
             $login_Email = $_POST['login_Email'];
             $login_Password = $_POST['login_Password'];
-
+            
             // Prepared query to check if the email is already registered
             $query = "SELECT * FROM `users` WHERE `email` = '".mysqli_real_escape_string($link,$login_Email)."'";
 
@@ -84,9 +82,11 @@ function login_System(){
                 }else{
 
                     if($row['email'] == $login_Email && isset($row['password'])){
-
+                        
+                        $secret = $row['password'];
                         // verifies the password with the existing `$query` and `$row` data.
-                        verify_Password_Login();
+                        verify_Password_Login($secret);
+                        
 
                     }elseif($row['email'] == $login_Email && !isset($row['password'])){
 
@@ -176,9 +176,13 @@ function stay_Logged_In(){
     
     global $login_Email;
     global $_SESSION;
+    global $_POST;
+    
+    echo "<br> DETAILS: " . $_POST['login_Password'];
     
     // Check if cookie should be used.
     if(isset($_POST['stay_Logged_Box'])){
+        
         
         // Start Cookie
         setcookie('id',$login_Email,time() + 60 * 60 * 24 * 2);
@@ -186,7 +190,7 @@ function stay_Logged_In(){
         
         // REDIRECT:
         
-        header ("Location: src/welcome.php");
+        header ("Location: welcome.php");
         
     }else{
         //Start Session
@@ -194,7 +198,7 @@ function stay_Logged_In(){
         $_SESSION['id'] = $login_Email;
         
         // REDIRECT:
-        header ("Location: src/welcome.php");
+        header ("Location: welcome.php");
 
     }
     
@@ -207,16 +211,12 @@ function stay_Logged_In(){
 */
 //////////////////////////////////////////////
 
-function verify_Password_Login(){
+function verify_Password_Login($hash){
 
-    global $hash;
     global $error_Success_Alert;
-    global $login_Password;
-    global $row;
+    global $login_Password;    
+    global $_POST;
     
-    
-        // Retrieve $hash from `password` field in DB 
-        $hash = $row['password'];
 
         // Verify if the $hash is related to the $login_Password
         if(password_verify($login_Password,$hash)){
@@ -483,7 +483,7 @@ function Stay_Logged_After_Registered(){
         // REDIRECT:
         
         
-        header ("Location:  ./src/welcome.php");
+        header ("Location:  welcome.php");
         
         
     }else{
@@ -491,7 +491,7 @@ function Stay_Logged_After_Registered(){
    
         $_SESSION['id'] = $register_Email;
 
-        header ("Location: ./src/welcome.php");
+        header ("Location: welcome.php");
     }
     
 }

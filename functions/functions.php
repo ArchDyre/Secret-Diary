@@ -302,7 +302,7 @@ if(function_exists('delete_User_Account') === false){
                 mysqli_query($link,$query);
                 
                 // Redirect to welcome Page
-                header ("Location: ../index_Rename.php");
+                header ("Location: ../index.php");
                 
                 // Not Working (Return message to `login` page `alert div`)
                 //$error_Success_Alert = "<div class='alert alert-danger'>Account Successfully deleted.</div>";

@@ -1,6 +1,14 @@
+html{
+    
+    background-color: transparent !important;
+    
+}
+
 body {
     background-color: transparent!important;
-    background: url("http://localhost/my_Projects/secret_Diary/images/misty_Background_Shadowed.png") no-repeat center center;
+    background-image: url("../images/misty_Background_Shadowed.png") !important;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-color: transparent!important;
     background-size: cover;
     overflow: auto;

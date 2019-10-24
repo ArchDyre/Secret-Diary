@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php
 
 //////////////////////////////////////////////////////////////////////
@@ -7,8 +8,7 @@
 //////////////////////////////////////////////////////////////////////
 // include "functions/";
 
-include "../functions/includes.php";
-
+include "functions/includes.php";
 
 ?>
 
@@ -19,10 +19,10 @@ include "../functions/includes.php";
     <!-- CSS Links -->
     
         <!-- Link to css normalising sheet. -->
-        <link rel="stylesheet" type="text/css" href="../css/normalise.css">
+        <link rel="stylesheet" type="text/css" href="css/normalise.css">
 
         <!-- Link to css sheet -->
-        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -62,7 +62,7 @@ include "../functions/includes.php";
   <body> <!-- START OF: <body> -->
     
     <!-- Navbar div => include -->
-    <div class="navigation_Area"><?php include ("nav.php") ?></div>
+    <div class="navigation_Area"><?php include ("src/nav.php") ?></div>
     
     
         <div class="container-fluid m-0 p-0 h-100 position-relative content_Boxes"> <!-- START OF: .container -->
@@ -91,53 +91,5 @@ include "../functions/includes.php";
         </div> <!-- END OF: .container --> 
 
     <!-- Footer div => include -->
-    <div class="main_Footer"><?php include __DIR__."/../src/footer.php"; ?></div>
+    <div class="main_Footer"><?php include "src/footer.php"; ?></div>
    
-    
-
-    
-    
-    <!-- jQuery Link -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	crossorigin="anonymous"></script>
-   
-   <!-- Offline jQuery Link -->
-    <script src="../resources/jquery-3.4.1.js"></script>  
-  
-   <!-- Popper.js Link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <!-- Bootstrap JavaScript Link -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    <!-- Link to own JavaScript sheets -->
-    
-    <script type="text/javascript" src="../javascript/javascript.js">
-    </script> <!-- END OF: Link to own JavaScript sheets -->
-    
-    
-    
-    <!-- Optional In-File JavaScript -->
-    <script type="text/javascript">
-        
-        /* Loads Nav 
-        $("#nav").load("nav.html");
-        */
-        
-        // Call function
-        media_Resizer();
-        // Runs the function on resizing event.        
-        window.addEventListener('resize',media_Resizer,false);
-        
-
-
-            
-        
-        
-        
-    </script> <!-- END OF: Optional In-File JavaScript -->
-    
-    
-  </body> <!-- END OF: <body> -->
-  
-</html> <!-- END OF: <html> -->
