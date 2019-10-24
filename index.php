@@ -1,4 +1,9 @@
+<?php ob_start(); ?>
 <?php
+
+// Start Session
+session_start();
+
 
 //////////////////////////////////////////////////////////////////////
 /*
@@ -10,8 +15,6 @@ include "functions/login_Registration.php";
 include "functions/functions.php";
 include "functions/logged_Id.php";
 
-// Starts Session
-session_start();
 global $error_Success_Alert;
 
 login_System();
@@ -29,10 +32,10 @@ registration_System();
     <!-- CSS Links -->
     
         <!-- Link to css normalising sheet. -->
-        <link rel="stylesheet" type="text/css" href="./css/normalise.css">
+        <link rel="stylesheet" type="text/css" href="css/normalise.css">
 
         <!-- Link to css sheet -->
-        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -48,7 +51,7 @@ registration_System();
     <!-- Declare <meta> variables -->
     
         <!-- Declare description of website -->
-        <meta name="description" content="login / registration Page">
+        <meta name="description" content="">
         <!-- Declare author of website. -->
         <meta name="author" content="Rohan Dyre">
         <!-- Declare keywords relating to SEO of website content -->
@@ -132,7 +135,7 @@ registration_System();
                     </form> <!-- END OF: login form -->
                     
                     <!-- Registration form -->
-                    <form method="post">
+                    <form method="post" action="">
                            
                             <!-- Registration container -->
                             
@@ -203,7 +206,7 @@ registration_System();
     
     <!-- Link to own JavaScript sheets -->
     
-    <script type="text/javascript" src="./javascript/javascript.js">
+    <script type="text/javascript" src="javascript/javascript.js">
     </script> <!-- END OF: Link to own JavaScript sheets -->
     
     

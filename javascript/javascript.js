@@ -164,9 +164,10 @@ function make_Active(){
 /* Redirect to the `logout.php` page on `logout button (class)` click. */
 $(".log_Out_Buttons").click(function(){
             
-            window.location.assign("http://localhost/my_Projects/secret_Diary/functions/logout.php");
+            window.location.assign("../functions/logout.php");
             
         });
+
 
 
 //////////////////////////////////////////////////////////////////////

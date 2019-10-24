@@ -1,5 +1,7 @@
 <?php
 
+include ("functions/logout.php");
+
 ?>
 
 
@@ -17,8 +19,8 @@
 
             <div class="navbar-nav collapse navbar-collapse m-auto" id="navbarSupportedContent">
 
-                <a class="navbar-brand" href="../src/welcome.php">
-                    <img src="../images/logo-text-only.png" width="75" height="35" alt="">
+                <a class="navbar-brand" href="welcome.php">
+                    <img src="images/logo-text-only.png" width="75" height="35" alt="">
                 </a> <!-- -->
 
                 <div class="navbar-nav custom_Navbar">
@@ -36,8 +38,9 @@
                 </div> <!-- -->
 
                 <div class="navbar-nav ml-auto" id="logout_Button_Welcome">
-
-                    <a class="nav-item nav-link text-body logout_Button_Styler log_Out_Buttons" href="#">Log out</a>
+                    
+                    <form method="post" action=""><input type="submit" name="logout_Btn" value="Log Out"></form>
+<!--                    <a class="nav-item nav-link text-body logout_Button_Styler log_Out_Buttons" href="functions/logout.php"> Log out</a>-->
 
                 </div> <!-- -->
 

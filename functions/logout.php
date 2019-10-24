@@ -7,22 +7,29 @@
 */
 //////////////////////////////////////////////
 
-
-function log_Out(){
+if(isset($_POST['logout_Btn'])){
     
+    session_start();
+
     global $_SESSION;
     global $_COOKIE;
-    
+
+    $_SESSION['id'] = "";
+    $_COOKIE['id'] = "";
+    $_COOKIE['PHPSESSID'] = "";
+
+
+    setcookie('id',"",time() - 60 * 60 * 24 * 2);
+    $_SESSION['id'] = "";
+
+    setcookie(session_name(),'',0,'/');   
     session_unset();
-    session_destroy();
-    session_write_close();
-    setcookie(session_name(),'',time() - 6 * 2);
-    session_regenerate_id(true);
-    
-    header ('../');
+
+    header ('Location: index.php');
     
 }
 
-log_Out();
+
+
 
 ?>
