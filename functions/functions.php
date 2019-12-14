@@ -157,7 +157,7 @@ if(function_exists('post_Diary_Entry') === false){
         
         $diary_Entry_Error_Message = "";
 
-        if($_POST['submit_Diary_Entry']){
+        if(isset($_POST['submit_Diary_Entry'])){
 
             // Check if `subject` is empty:
             if(!isset($_POST['diary_Subject']) || $_POST['diary_Subject'] == ""){
@@ -284,7 +284,7 @@ if(function_exists('delete_User_Account') === false){
         global $_SESSION;
         global $error_Success_Alert;
         
-        if($_POST['delete_Input_Submit']){
+        if(isset($_POST['delete_Input_Submit'])){
 
             if($_POST['delete_Input'] == "" || !isset($_POST['delete_Input'])){
 
@@ -293,7 +293,7 @@ if(function_exists('delete_User_Account') === false){
                 return $account_Delete_Message;
 
 
-            }elseif($_POST['delete_Input'] == "DELETE"){
+            }elseif(isset($_POST['delete_Input']) == "DELETE"){
 
                 // Query to `delete` Account
                 $query = "DELETE FROM `users` WHERE `email` = '".mysqli_real_escape_string($link,$_SESSION['id'])."'";
@@ -302,7 +302,7 @@ if(function_exists('delete_User_Account') === false){
                 mysqli_query($link,$query);
                 
                 // Redirect to welcome Page
-                header ("Location: ../index.php");
+                header ("Location: functions/logout.php?logout=true");
                 
                 // Not Working (Return message to `login` page `alert div`)
                 //$error_Success_Alert = "<div class='alert alert-danger'>Account Successfully deleted.</div>";
@@ -374,6 +374,7 @@ if(function_exists('recall_User_Info') === false){
             
             // Format No. into visually acceptable string
             $user_A_Phone = substr($row['phone'],0,3)." ".substr($row['phone'],3,3)." ".substr($row['phone'],6,4);
+
         }
     }
 }
@@ -391,7 +392,7 @@ if(function_exists('update_User_Info') === false){
         
         $account_Error_Message = "";
         
-        if($_POST['user_Update_Info']){
+        if(isset($_POST['user_Update_Info'])){
             
             // Form `name` Validation
             if(!isset($_POST['user_A_Name']) || $_POST['user_A_Name'] == ""){
@@ -408,7 +409,7 @@ if(function_exists('update_User_Info') === false){
                 } 
 
             // Form `phone` Validation
-            if($_POST['user_A_Phone'] != ""){
+            if(isset($_POST['user_A_Phone'])){
                 
                 if (strlen($_POST['user_A_Phone']) < 10 || strlen($_POST['user_A_Phone']) > 13) {
                     
@@ -432,6 +433,10 @@ if(function_exists('update_User_Info') === false){
                     }
                     
                 }
+            }else{
+                
+                $insert_Number = "";
+                
             }
             
             
@@ -466,14 +471,21 @@ if(function_exists('update_User_Info') === false){
                 
                 // Display correct Phone no
                 global $user_A_Phone;
-                $user_A_Phone = substr($insert_Number,0,3)." ".substr($insert_Number,3,3)." ".substr($insert_Number,6,4);
+                
+                // Formats and error checks phone number
+                if($user_A_Phone != ""){
+                    
+                    $user_A_Phone = substr($insert_Number,0,3)." ".substr($insert_Number,3,3)." ".substr($insert_Number,6,4);
+                    
+                }
+                
                 
                 // Display Success Message
                 return $account_Error_Message;        
                 
             }else{
                 
-                $account_Error_Message = "<div class='alert alert-danger'><div class='h3'>An Error(s) has occured:</div> '".$account_Error_Message."'</div>";
+                $account_Error_Message = "<div class='alert alert-danger'><div class='h3 mb-3'>An Error(s) has occured:</div> ".$account_Error_Message."</div>";
                 return $account_Error_Message;
             }
             

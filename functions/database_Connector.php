@@ -17,10 +17,10 @@
 */
 //////////////////////////////////////////////
 
-$server_Name = "localhost:3306";
-$user_Name = "dpumoodr_admin";
-$pass_Word = "97D!aRy97";
-$db_Name = "dpumoodr_secret_diary";
+$server_Name = "127.0.0.1";
+$user_Name = "root";
+$pass_Word = "";
+$db_Name = "secret_diary";
 
 
 //////////////////////////////////////////////

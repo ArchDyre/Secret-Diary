@@ -37,7 +37,7 @@ function login_System(){
     global $link;
     
     
-    if($_POST['login_Button']){
+    if(isset($_POST['login_Button'])){
         
     // Clearing the error messages.
     $error_Success_Alert = "";    
@@ -278,7 +278,7 @@ function registration_System(){
     global $register_Password;
     global $register_Name;
     
-    if($_POST['register_Button']){
+    if(isset($_POST['register_Button'])){
         
         // Clearing the error messages.
         $error_Success_Alert = "";

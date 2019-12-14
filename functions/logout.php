@@ -7,7 +7,7 @@
 */
 //////////////////////////////////////////////
 
-if(isset($_POST['logout_Btn'])){
+if(isset($_POST['logout_Btn']) || isset($_GET['logout']) == true){
     
     session_start();
 
@@ -24,10 +24,21 @@ if(isset($_POST['logout_Btn'])){
 
     setcookie(session_name(),'',0,'/');   
     session_unset();
-
-    header ('Location: index.php');
+    
+    if(isset($_GET['logout']) == true){
+        
+        header ('Location: ../index.php');
+        
+    }else{
+        
+        header ('Location: index.php');
+        
+    }
+    
+    
     
 }
+
 
 
 
